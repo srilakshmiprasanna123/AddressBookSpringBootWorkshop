@@ -1,0 +1,6 @@
+html body{
+    height: 100vh;
+    background-image: url(https://image.shutterstock.com/image-photo/yellow-phone-book-black-on-260nw-148371572.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}

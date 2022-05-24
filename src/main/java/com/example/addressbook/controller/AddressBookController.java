@@ -26,25 +26,32 @@ public class AddressBookController {
 
     @PostMapping("/add")
     public  ResponseEntity<ResponseDTO> PostAddress(@RequestBody AddressDto addressDto){
+
         ResponseDTO responseDTO = new ResponseDTO("Employee Created Successfully", iAddressBookSercvice.addEmployee(addressDto));
+
+
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
     }
 
     @GetMapping("/get/{id}")
     public ResponseEntity<ResponseDTO> getAddressById(@PathVariable int id){
         ResponseDTO responseDTO = new ResponseDTO("Employee id  Successfully", iAddressBookSercvice.searchByID(id));
+
+        
         return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.CREATED);
     }
 
     @GetMapping("/get-all")
     public ResponseEntity<ResponseDTO> getAddress() {
         ResponseDTO responseDTO = new ResponseDTO("Getting all the record..", iAddressBookSercvice.getAddress());
+
         return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.CREATED);
     }
 
     @PutMapping("/edit/{id}")
     public ResponseEntity<ResponseDTO>   editData( @PathVariable Integer id, @RequestBody AddressDto addressDto) {
         ResponseDTO responseDTO = new ResponseDTO("Getting all the record..", iAddressBookSercvice.editData(id, addressDto));
+
         return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.CREATED);
     }
 

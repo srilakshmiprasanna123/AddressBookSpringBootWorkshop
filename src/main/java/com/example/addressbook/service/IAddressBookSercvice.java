@@ -3,6 +3,7 @@ package com.example.addressbook.service;
 import com.example.addressbook.dto.AddressDto;
 import com.example.addressbook.model.AddressBookEntity;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface IAddressBookSercvice {
@@ -16,4 +17,6 @@ public interface IAddressBookSercvice {
     Object getAddress();
 
     String deleteById(Integer id);
+
+    List<AddressBookEntity> City(String city);
 }

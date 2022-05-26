@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AddressBookSercvice implements IAddressBookSercvice{
+public class AddressBookSercvice implements IAddressBookSercvice {
 
     @Autowired
     AddressBookRepository addressBookRepository;
@@ -48,10 +48,16 @@ public class AddressBookSercvice implements IAddressBookSercvice{
 
     }
 
+    public List<AddressBookEntity> City(String city) {
+        return addressBookRepository.findByCity(city);
+    }
+
+
+
+
     public List<AddressBookEntity> getAddress() {
         return addressBookRepository.findAll();
     }
-
 
 
 

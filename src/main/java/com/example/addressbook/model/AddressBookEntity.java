@@ -45,8 +45,6 @@ public  class  AddressBookEntity {
         this.zip = addressDto.zip;
         this.email = addressDto.email;
         this.phone = addressDto.phone;
-
-
     }
 
     public AddressBookEntity(Integer id, AddressDto addressDto) {
@@ -58,8 +56,6 @@ public  class  AddressBookEntity {
         this.zip = addressDto.zip;
         this.email = addressDto.email;
         this.phone = addressDto.phone;
-
-
     }
 
     public AddressBookEntity(Integer id) {

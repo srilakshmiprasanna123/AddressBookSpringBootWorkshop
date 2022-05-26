@@ -12,9 +12,7 @@ public class ResponseDTO {
     String message;
     Object data;
 
-    public ResponseDTO(String message) {
-        this.message = message;
-    }
+    public ResponseDTO(String message) {  this.message = message; }
 
     public ResponseDTO(Object data) {
         this.data = data;

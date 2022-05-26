@@ -7,9 +7,9 @@ import java.util.Optional;
 
 public interface IAddressBookSercvice {
 
-    public AddressBookEntity addEmployee(AddressDto addressDto);
+     AddressBookEntity addEmployee(AddressDto addressDto);
 
-    public Optional<AddressBookEntity> searchByID(int id);
+     Optional<AddressBookEntity> searchByID(int id);
 
     Object editData(Integer id, AddressDto addressDto);
 

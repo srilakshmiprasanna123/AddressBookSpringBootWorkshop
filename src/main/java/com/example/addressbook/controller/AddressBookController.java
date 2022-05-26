@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/addressbook")
 
@@ -21,11 +23,11 @@ public class AddressBookController {
 
     @GetMapping("/hello")
     public String getMessage() {
-        return "Welcome to Addressbook App";
+        return "Welcome to Address-book App";
     }
 
     @PostMapping("/add")
-    public  ResponseEntity<ResponseDTO> PostAddress(@RequestBody AddressDto addressDto){
+    public  ResponseEntity<ResponseDTO> PostAddress(  @Valid @RequestBody AddressDto addressDto){
         ResponseDTO responseDTO = new ResponseDTO("Employee Created Successfully", iAddressBookSercvice.addEmployee(addressDto));
         return new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
     }
@@ -43,7 +45,7 @@ public class AddressBookController {
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<ResponseDTO>   editData( @PathVariable Integer id, @RequestBody AddressDto addressDto) {
+    public ResponseEntity<ResponseDTO>   editData( @Valid @PathVariable Integer id, @RequestBody AddressDto addressDto) {
         ResponseDTO responseDTO = new ResponseDTO("Getting all the record..", iAddressBookSercvice.editData(id, addressDto));
         return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.CREATED);
     }

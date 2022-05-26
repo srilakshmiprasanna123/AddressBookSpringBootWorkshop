@@ -12,6 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/addressbook")
@@ -55,4 +57,13 @@ public class AddressBookController {
         iAddressBookSercvice.deleteById(id);
         return "Address of id:" + id + " has been deleted";
     }
+
+    @GetMapping("/City/{city}")
+    public ResponseEntity<ResponseDTO> city(@PathVariable("city") String city){
+        List<AddressBookEntity> addressBookEntity = iAddressBookSercvice.City(city);
+        ResponseDTO responseDTO = new ResponseDTO("Get Call for ID successful",addressBookEntity);
+        return new ResponseEntity<>(responseDTO,HttpStatus.OK);
+    }
+
+
 }
